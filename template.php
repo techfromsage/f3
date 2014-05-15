@@ -370,7 +370,7 @@ class F3markup extends Base {
 								$this->syms['_'.$cvar]=NULL;
 							$out.='<?php '.
 								(isset($cvar)?('$_'.$cvar.'=0; '):'').
-								'if (is_array('.$gstr.')):'.
+								'if (is_array('.$gstr.') || '.$gstr.' instanceof Traversable):'.
 								'foreach (('.$gstr.'?:array()) as '.
 								(isset($kvar)?('$_'.$kvar.'=>'):'').
 									'$_'.$vvar.'):'.
